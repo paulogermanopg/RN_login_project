@@ -33,17 +33,32 @@ export const FormTitle = styled.Text`
 `;
 
 export const FormInput = styled.TextInput`
-    border-bottom-width: 1px;
-    height: 40px;
-    margin-bottom: 12px;
+    width: 100%;
     font-size: 16px;
     color: #000;
+`;
+
+export const InputContainer = styled.View`
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    margin-top: 2px;
+`;
+
+export const ToggleButton = styled.TouchableOpacity`
+    padding: 5px;
+    position: absolute;
+    right: 5px;
 `;
 
 export const AcessButton = styled.TouchableOpacity`
     background-color: #489cbd;
     width: 100%;
-    borderadius: 4px;
+    border-radius: 4px;
     padding-top: 8px;
     padding-bottom: 8px;
     margin-top: 14px;

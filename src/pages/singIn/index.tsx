@@ -1,7 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Icon from 'react-native-vector-icons/Ionicons';
 import * as S from './styles';
 
 export default function SingIn() {
+    const [email, setEmail] = useState<string>('');
+    const [password, setPassword] = useState<string>('');
+    const [secureEntry, setSecureEntry] = useState<boolean>(true);
+
+    const toggleSecureEntry = () => {
+        setSecureEntry(!secureEntry);
+    };
+
     return (
         <S.Container>
             <S.HeaderContainer
@@ -17,19 +26,35 @@ export default function SingIn() {
                 <S.FormTitle>
                     E-mail
                 </S.FormTitle>
-                <S.FormInput
-                    placeholder="Digite o seu e-mail"
-                    placeholderTextColor="#888"
-                />
+
+                <S.InputContainer>
+                    <S.FormInput
+                        placeholder="Digite o seu e-mail"
+                        placeholderTextColor="#888"
+                        onChangeText={setEmail}
+                    />
+                </S.InputContainer>
 
                 <S.FormTitle>
                     Senha
                 </S.FormTitle>
-                <S.FormInput
-                    placeholder="Digite a sua senha"
-                    placeholderTextColor="#888"
-                    secureTextEntry={true}
-                />
+
+                <S.InputContainer>
+                    <S.FormInput
+                        placeholder="Digite a sua senha"
+                        placeholderTextColor="#888"
+                        secureTextEntry={secureEntry}
+                        onChangeText={setPassword}
+                    />
+
+                <S.ToggleButton onPress={toggleSecureEntry}>
+                    <Icon
+                        name={secureEntry ? 'eye-off' : 'eye'}
+                        size={24}
+                        color="#ccc"
+                    />
+                </S.ToggleButton>
+                </S.InputContainer>
 
                 <S.AcessButton>
                     <S.ButtonText>
