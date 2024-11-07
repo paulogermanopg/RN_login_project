@@ -10,7 +10,7 @@ Este projeto foi criado com o React Natice CLI usando [`@react-native-community/
 Versão do node v20.17.0
 
 ## Prévia
-![demonstração da tela](lp01.gif)
+<img src="lp01.gif" width="300" />
 
 # Instalação
 ## Passo 1
